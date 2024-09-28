@@ -19,7 +19,7 @@ namespace francis_elijah_a2_drawin
         /// </summary>
         public void Setup()
         {
-          Window.SetTitle("Sword.v2");
+          Window.SetTitle("Sword?.v2");
           Window.SetSize(800, 600);
 
             Color Brown = new Color(113, 56, 56);
@@ -29,6 +29,9 @@ namespace francis_elijah_a2_drawin
         /// <summary>
         ///     Update runs every frame.
         /// </summary>
+        /// The shape is coming up incorrectly coloured
+        /// investigate and seek out the issue as to why
+        /// positions are fine and update well
         public void Update()
         {
             Window.ClearBackground(color:Color.OffWhite);
@@ -80,7 +83,7 @@ namespace francis_elijah_a2_drawin
                 Draw.FillColor = Color.Brown;
                 Draw.LineColor = Color.Black;
 
-                Draw.Circle(x, y, 30);
+                Draw.Circle(x, y, 20);
 
             }
 
