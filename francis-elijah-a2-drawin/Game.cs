@@ -12,23 +12,23 @@ namespace francis_elijah_a2_drawin
     public class Game
     {
         // Place your variables here:
-      
 
+        Color Brown = new Color(113, 56, 56);
         /// <summary>
         ///     Setup runs once before the game loop begins.
         /// </summary>
         public void Setup()
         {
-          Window.SetTitle("Sword?.v2");
+          Window.SetTitle("Sword?.v2.1");
           Window.SetSize(800, 600);
 
-            Color Brown = new Color(113, 56, 56);
-
+            
         }
 
         /// <summary>
         ///     Update runs every frame.
         /// </summary>
+        
         /// The shape is coming up incorrectly coloured
         /// investigate and seek out the issue as to why
         /// positions are fine and update well
@@ -37,53 +37,64 @@ namespace francis_elijah_a2_drawin
             Window.ClearBackground(color:Color.OffWhite);
 
             //Blade
-             
-          Draw.Rectangle(350,180,100,220);
+          
+          Draw.FillColor = Color.LightGray;
+          Draw.Quad(450,200,500,250,250,450,200,400);
           Draw.FillColor = Color.LightGray;
 
-            
+
             
             //Crossguard
             
-          Draw.Rectangle(300,150,200,30);
-          Draw.FillColor = Color.Black;
+          Draw.Quad(420,130,570,280,550,300,400,150);
+          Draw.FillColor = new Color(113,56,56);
 
             
-            
+
             //Handle
-            
-          Draw.Rectangle(380, 50, 40, 100);
-          Draw.FillColor = Color.Brown;
-            
-            
+            Draw.FillColor = new Color(113, 56, 56);
+            Draw.Quad(580,100,610,130,510,220,480,190);
+
+
+
             //Tip
-            
-          Draw.Triangle(350, 400, 400, 450, 450, 400);
-            
-
-            //Fuller
-            
-          Draw.Capsule(400, 210, 400, 400, 20);
-          Draw.FillColor = Color.DarkGray;
-
-            //Blood droplet
-            
-                Draw.Circle(400, 480, 10);
-                Draw.Triangle(400, 450, 390, 480, 410, 480);
-
+            Draw.FillColor = Color.Red;
+            Draw.Triangle(200,400,250,450,170,470);
             //Pommel and jewels
 
-            DrawJewel(280, 165);
-            DrawJewel(520, 165);
-            DrawJewel(400, 35);
+            DrawJewel(410, 145);
+            DrawJewel(600, 110);
+            DrawJewel(570, 300);
+
+            //Fuller
+            Draw.FillColor = Color.DarkGray;
+            Draw.Capsule(450,240, 240,410, 10);
+
+
+            //Blood droplet
+            void DrawDroplet(int x, int y)
+            {
+                Draw.FillColor = Color.Red;
+                Draw.LineSize = 1;
+                Draw.Triangle(x, y + 20, x - 10, y + 50, x + 10, y + 50);
+                Draw.Circle(x, y + 50, 10);
+            }
+
+            DrawDroplet(170,470);
+            
 
             void DrawJewel(int x, int y)
             {
                 Draw.LineSize = 1;
-                Draw.FillColor = Color.Brown;
+                Draw.FillColor = Color.LightGray;
                 Draw.LineColor = Color.Black;
-
                 Draw.Circle(x, y, 20);
+
+                Draw.FillColor = Color.Green;
+                Draw.Circle(x, y, 10);
+
+                Draw.FillColor = Color.White;
+                Draw.Circle(x + 5, y - 3, 3);
 
             }
 
