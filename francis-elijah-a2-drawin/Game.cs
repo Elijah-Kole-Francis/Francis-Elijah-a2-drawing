@@ -126,7 +126,7 @@ namespace francis_elijah_a2_drawin
                     Draw.Circle(x, y, 10);
 
                     Draw.FillColor = Color.White;
-                    Draw.Circle(x + 5, y - 3, 3);
+                    Draw.Circle(x + 5, y - 3, 4);
 
                     
                 }
@@ -134,7 +134,6 @@ namespace francis_elijah_a2_drawin
                 programRunning = false;
             }
             //Gonna see if I can draw a blood droplet in a certain area equal to the input number
-            // it's posible, thanks ethan
             
 
             
